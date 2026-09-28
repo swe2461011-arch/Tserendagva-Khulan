@@ -1,3 +1,4 @@
+import { t } from "../i18n/i18n.js";
 import { renderPageLayout } from "../layouts/pageLayout.js";
 
 export function renderContactPage() {
@@ -5,9 +6,9 @@ export function renderContactPage() {
 
   app.innerHTML = renderPageLayout({
     id: "contact",
-    title: "Contact",
+    title: t("contact.title"),
     content: `
-      <p>Welcome to the Contact page.</p>
+      <p>${t("contact.welcome")}</p>
     `,
   });
 }
