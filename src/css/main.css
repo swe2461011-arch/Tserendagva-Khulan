@@ -22922,5 +22922,304 @@ has-background-danger.is-hoverable:active {
     font-size: 0.95rem;
   }
 }
+/* =========================================
+   LIGHT MODE
+   ========================================= */
+:root {
+  --bg: #ffffff;
+  --text: #23262f;
+  --border: #ececf2;
+  --hover: #f5f5f5;
+  --active-bg: #fff2e8;
+  --active-color: #2bac73;
+  --card: #ffffff;
+}
+
+body,
+html {
+  background: #ffffff !important;
+  color: #23262f !important;
+}
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+.app-sidebar,
+.app-sidebar .menu {
+  background: #ffffff !important;
+}
+
+.app-sidebar .menu-list a,
+.app-sidebar .menu-list li a {
+  background: #ffffff !important;
+  color: #23262f !important;
+  border: 1px solid #ececf2 !important;
+  border-radius: 8px !important;
+  margin-bottom: 6px !important;
+  box-shadow: none !important;
+}
+
+.app-sidebar .menu-list a:hover {
+  background: #f5f5f5 !important;
+  color: #23262f !important;
+}
+
+.app-sidebar .menu-list a.is-active {
+  background: #fff2e8 !important;
+  color: #2bac73 !important;
+  border-color: #2bac73 !important;
+  font-weight: 600;
+}
+
+/* =========================================
+   TABLE
+   ========================================= */
+.table {
+  background: #ffffff !important;
+  color: #23262f !important;
+}
+
+.table th,
+.table td {
+  background: #ffffff !important;
+  color: #23262f !important;
+  border-color: #ececf2 !important;
+}
+
+.table tr:hover td {
+  background: #f5f5f5 !important;
+}
+
+/* =========================================
+   INPUT
+   ========================================= */
+.input,
+input,
+select,
+textarea {
+  background: #ffffff !important;
+  color: #23262f !important;
+  border-color: #ececf2 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999999 !important;
+}
+
+/* =========================================
+   TEXT
+   ========================================= */
+.title,
+.subtitle,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label {
+  color: #23262f !important;
+}
+
+/* =========================================
+   NAVBAR & FOOTER
+   ========================================= */
+.navbar,
+.navbar-menu,
+.navbar-item,
+.navbar-link,
+footer,
+.footer {
+  background: #ffffff !important;
+  color: #23262f !important;
+}
+
+/* =========================================
+   LOGO / ICON
+   ӨӨРЧЛӨХГҮЙ
+   ========================================= */
+.app-logo img,
+.icon {
+  filter: none !important;
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+body.dark-mode {
+  --bg: #000000;
+  --text: #ffffff;
+  --border: #ffffff;
+  --hover: #000000;
+  --active-bg: #000000;
+  --active-color: #ffffff;
+  --card: #000000;
+}
+
+/* =========================================
+   БҮХ BACKGROUND → ХАР
+   ========================================= */
+body.dark-mode,
+body.dark-mode html {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode main,
+body.dark-mode section,
+body.dark-mode .section,
+body.dark-mode .container,
+body.dark-mode .columns,
+body.dark-mode .column,
+body.dark-mode .box,
+body.dark-mode .card,
+body.dark-mode .card-content,
+body.dark-mode .notification,
+body.dark-mode .content,
+body.dark-mode .app-shell,
+body.dark-mode .app-main-content {
+  background: #000000 !important;
+}
+
+/* =========================================
+   SIDEBAR → ХАР
+   ========================================= */
+body.dark-mode .app-sidebar,
+body.dark-mode .app-sidebar .menu {
+  background: #000000 !important;
+}
+
+body.dark-mode .app-sidebar .menu-list a,
+body.dark-mode .app-sidebar .menu-list li a {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+body.dark-mode .app-sidebar .menu-list a:hover,
+body.dark-mode .app-sidebar .menu-list a.is-active {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+/* =========================================
+   TABLE
+   BACKGROUND → ХАР
+   BORDER → ЦАГААН
+   TEXT → ЦАГААН
+   ========================================= */
+body.dark-mode .table,
+body.dark-mode .table thead,
+body.dark-mode .table tbody,
+body.dark-mode .table tr,
+body.dark-mode .table th,
+body.dark-mode .table td {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+body.dark-mode .table tr:hover td {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* =========================================
+   INPUT
+   ========================================= */
+body.dark-mode .input,
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #ffffff !important;
+}
+
+/* =========================================
+   БҮХ TEXT → ЦАГААН
+   ========================================= */
+body.dark-mode .title,
+body.dark-mode .subtitle,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label,
+body.dark-mode strong,
+body.dark-mode td,
+body.dark-mode th {
+  color: #ffffff !important;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+body.dark-mode .navbar,
+body.dark-mode .navbar-menu,
+body.dark-mode .navbar-item,
+body.dark-mode .navbar-link {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* =========================================
+   LOGO / ICON
+   ӨНГИЙГ НЬ ӨӨРЧЛӨХГҮЙ
+   ========================================= */
+body.dark-mode .app-logo img {
+  filter: none !important;
+}
+
+body.dark-mode .icon {
+  filter: none !important;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+body.dark-mode footer,
+body.dark-mode .footer {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* =========================================
+   ТОВЧЛУУР HOVER → НОГООН
+   ========================================= */
+/* Light mode */
+.button:hover,
+.button.is-primary:hover,
+.button.is-success:hover,
+.button.is-link:hover,
+button:hover {
+  background-color: #2bac73 !important;
+  border-color: #2bac73 !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode */
+body.dark-mode .button:hover,
+body.dark-mode .button.is-primary:hover,
+body.dark-mode .button.is-success:hover,
+body.dark-mode .button.is-link:hover,
+body.dark-mode button:hover {
+  background-color: #2bac73 !important;
+  border: 2px solid #2bac73 !important; /* ногоон хүрээ */
+  color: #ffffff !important;
+}
 
 /*# sourceMappingURL=main.css.map */
