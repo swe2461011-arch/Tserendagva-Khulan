@@ -1,4 +1,4 @@
-import { getImagesByFoodCode } from "../../services/imageService.js";
+import { getImagesByFoodCode } from "../services/imageService.js";
 
 let slideshowImages = [];
 let currentIndex = 0;
