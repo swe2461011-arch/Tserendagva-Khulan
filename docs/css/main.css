@@ -22760,42 +22760,69 @@ has-background-danger.is-hoverable:active {
   color: var(--green);
 }
 
-.app-shell {
-  display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
-  min-height: 100vh;
-  background: var(--page-bg);
+.app-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  max-width: 760px;
+  margin-bottom: 0.5rem;
 }
 
-.app-sidebar {
-  min-width: 0;
-  background: var(--sidebar-bg);
-  border-right: 1px solid var(--border);
+.app-line {
+  width: 76px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--orange);
+  margin-bottom: 1.5rem;
+}
+
+.app-subtitle {
+  color: #607089;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: bold;
+  line-height: 1.6;
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.image-count-tag {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  border-radius: 999px;
+}
+.image-count-tag:hover {
+  background-color: rgb(14.3333333333%, 57.3333333333%, 38.3333333333%);
+}
+
+#imageModal .modal-card {
+  width: 640px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+#imageModal .modal-card-head {
+  padding: 1.2rem 1.5rem;
+}
+#imageModal .modal-card-body {
   padding: 1.5rem;
 }
-
-.app-main-content {
-  min-width: 0;
+#imageModal #slideshowImage {
+  max-height: 52vh;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
 }
 
-.app-sidebar-overlay {
-  display: none;
+.zoomable-image {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+  user-select: none;
 }
 
-.app-mobile-sidebar {
-  display: none;
-}
-
-.app-sidebar-mobile-head {
-  display: none;
-}
-
-.app-sidebar-icon-btn {
-  border: 1px solid var(--border);
-  background: #fff;
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
+#fullscreenBtn {
+  border: none;
 }
 
 /* =========================
@@ -22804,12 +22831,16 @@ has-background-danger.is-hoverable:active {
 @media screen and (min-width: 769px) {
   .app-mobile-sidebar,
   .app-sidebar-mobile-head {
+    /* Mobile-д зориулсан элементүүдийг нуух */
     display: none;
   }
   .app-sidebar {
+    /* Sidebar-г буцааж хэвийн layout-д оруулна */
     position: static;
+    /* translate animation-г устгана */
     transform: none;
     height: auto;
+    /* Mobile shadow-г арилгана */
     box-shadow: none;
   }
 }
@@ -22833,14 +22864,14 @@ has-background-danger.is-hoverable:active {
 ========================= */
 @media screen and (max-width: 768px) {
   .app-shell {
-    display: block;
+    display: block; /* Sidebar + main layout-ийг stack болгоно */
   }
   .app-mobile-sidebar {
-    display: block;
+    display: block; /* Mobile дээр гарч ирэх ↪ button */
   }
   .app-sidebar {
     display: block;
-    position: fixed;
+    position: fixed; /* Sidebar-г fixed болгож slide menu болгоно */
     top: 0;
     left: 0;
     width: 320px;
@@ -22853,22 +22884,23 @@ has-background-danger.is-hoverable:active {
     border-bottom: 0;
     padding: 1rem 1rem 2rem;
     overflow-y: auto;
+    /* Sidebar-г default үед нуух (зүүн тийш гаргана) */
     transform: translateX(-100%);
     transition: transform 0.28s ease;
     box-shadow: 10px 0 30px rgba(0, 0, 0, 0.14);
   }
   .app-sidebar.is-open {
-    transform: translateX(0);
+    transform: translateX(0); /* Нээгдэх үед буцааж харуулна */
   }
   .app-sidebar-mobile-head {
+    /* Close button байрлах хэсэг */
     display: flex;
     justify-content: flex-end;
     margin-bottom: 0.75rem;
   }
   .app-title {
-    font-size: 2rem;
+    font-size: 1.65rem;
     line-height: 1.15;
-    letter-spacing: -0.03em;
   }
   .app-subtitle {
     font-size: 1rem;
@@ -22884,7 +22916,7 @@ has-background-danger.is-hoverable:active {
 ========================= */
 @media screen and (max-width: 480px) {
   .app-title {
-    font-size: 1.75rem;
+    font-size: 1.45rem;
   }
   .app-subtitle {
     font-size: 0.95rem;
