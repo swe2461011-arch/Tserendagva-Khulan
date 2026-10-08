@@ -1,7 +1,10 @@
 const fs = require("fs");
 
-const data = JSON.parse(fs.readFileSync("./src/data/nutritions.json", "utf8"));
+const raw = fs
+  .readFileSync("./src/data/nutritions.json", "utf8")
+  .replace(/^\uFEFF/, "");
 
+const data = JSON.parse(raw);
 const foodGroupMnMap = {
   "Cereals and Cereal products": "Үр тариа ба үр тариан бүтээгдэхүүн",
   "Starchy Roots and Starch products": "Цардуулт үндэс ба цардуулан бүтээгдэхүүн",
