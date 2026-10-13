@@ -5,14 +5,18 @@ export function renderTable({
   title = "",
   columns = [],
   rows = [],
+  footer = "",
   emptyMessage = "No data available.",
+  wrapperClass = "table-container app-tbl",
+  tableClass = "table is-striped is-bordered is-hoverable is-fullwidth",
+  titleClass = "subtitle app-subtitle",
 }) {
   return `
-    <div class="table-container app-tbl">
+    <div class="${wrapperClass}">
       ${
         title
           ? `
-            <h2 class="subtitle app-subtitle">
+            <h2 class="${titleClass}">
               ${safeValue(title)}
             </h2>
           `
@@ -22,15 +26,10 @@ export function renderTable({
       ${
         rows.length
           ? `
-            <table class="table is-striped is-bordered is-hoverable is-fullwidth">
+            <table class="${tableClass}">
               <thead>
                 <tr>
-                  ${columns
-                    .map(
-                      (col) =>
-                        `<th>${safeValue(col.label)}</th>`,
-                    )
-                    .join("")}
+                  ${columns.map((col) => `<th class="${col.thClass || ""}">${safeValue(col.label)}</th>`).join("")}
                 </tr>
               </thead>
 
@@ -41,13 +40,9 @@ export function renderTable({
                       <tr>
                         ${columns
                           .map((col) => {
-                            if (typeof col.render === "function") {
-                              return `<td>${col.render(row)}</td>`;
-                            }
+                            const value = typeof col.render === "function" ? col.render(row) : safeValue(row[col.key]);
 
-                            return `<td>${safeValue(
-                              row[col.key],
-                            )}</td>`;
+                            return `<td class="${col.tdClass || ""}">${value}</td>`;
                           })
                           .join("")}
                       </tr>
@@ -55,6 +50,8 @@ export function renderTable({
                   )
                   .join("")}
               </tbody>
+
+              ${footer ? `<tfoot>${footer}</tfoot>` : ""}
             </table>
           `
           : renderNotification(safeValue(emptyMessage))
