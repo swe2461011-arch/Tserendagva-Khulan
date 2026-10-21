@@ -1,0 +1,76 @@
+
+/* Номын картууд ижил өндөртэй */
+.book-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Номын зургийн хэсэг ижил хэмжээтэй */
+.book-card figure.image {
+  height: 280px;
+  min-height: 280px;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+/* Зургийг хэмжээнд нь багтаах */
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Номын тайлбарууд ижил өндөртэй */
+.book-description {
+  height: 220px;
+  min-height: 220px;
+  max-height: 220px;
+  flex: 0 0 220px;
+  padding: 1rem;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  text-align: justify;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Товчнуудыг картын доод хэсэгт зэрэгцүүлэх */
+.book-footer {
+  margin-top: auto;
+  height: 76px;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+/* Үзэх товч ижил өргөнтэй */
+.book-view-btn {
+  width: 100%;
+  max-width: 220px;
+}
+
+/* Гар утасны дэлгэц */
+@media screen and (max-width: 768px) {
+  .book-card figure.image {
+    height: 240px;
+    min-height: 240px;
+  }
+
+  .book-description {
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    flex-basis: 200px;
+  }
+}
