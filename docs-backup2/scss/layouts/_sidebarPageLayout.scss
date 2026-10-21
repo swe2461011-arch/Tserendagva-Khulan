@@ -1,0 +1,37 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
+  background: var(--page-bg);
+}
+
+.app-sidebar {
+  min-width: 0;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  padding: 1.5rem;
+}
+
+.app-main-content {
+  min-width: 0;
+}
+
+.app-sidebar-overlay {
+  display: none;
+}
+
+.app-mobile-sidebar {
+  display: none;
+}
+
+.app-sidebar-mobile-head {
+  display: none;
+}
+
+.app-sidebar-icon-btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}

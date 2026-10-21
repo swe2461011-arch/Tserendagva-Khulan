@@ -34,6 +34,7 @@ $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
 @import "./components/imageModal";
 @import "./components/map";
 @import "./components/overviewText";
+@import "./components/_bookCard";
 // Mobile (<768px) → Sidebar = slide menu (hidden → open)
 // Tablet (≤1023px) → зөвхөн хэмжээ багасгана
 // Desktop (≥769px) → Sidebar = байнга харагдана (static)
@@ -395,6 +396,7 @@ body.dark-mode .table tr:hover td {
 }
 
 
+
 /* =========================================
    INPUT
    ========================================= */
@@ -501,4 +503,198 @@ body.dark-mode button:hover {
   background-color: #2bac73 !important;
   border: 2px solid #2bac73 !important;   /* ногоон хүрээ */
   color: #ffffff !important;
+}
+
+
+
+/* =========================================
+   SIDEBAR / MAIN CONTENT LAYOUT FIX
+   ========================================= */
+
+/* Үндсэн layout */
+.app-shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Sidebar */
+.app-sidebar {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sidebar доторх бүх текстэн холбоос */
+.app-sidebar .menu-list a {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Sidebar доторх жагсаалт */
+.app-sidebar .menu-list,
+.app-sidebar .menu-list li {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Үндсэн агуулга */
+.app-main-content {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Хүснэгтийн хэт өргөнийг хянах */
+.app-main-content {
+  overflow-wrap: anywhere;
+}
+
+.app-main-content .table-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Утас */
+@media screen and (max-width: 768px) {
+  .app-shell {
+    display: block;
+  }
+
+  .app-sidebar {
+    width: 320px;
+    max-width: 85vw;
+  }
+
+  .app-main-content {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* =========================================
+   SIDEBAR: УРТ ТЕКСТИЙГ ХАЙРЦАГТ БАГТААХ
+   ========================================= */
+
+.app-sidebar a,
+.app-sidebar button,
+.app-sidebar .button,
+.app-sidebar .menu-list a,
+.app-sidebar .menu-list li > * {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  height: auto !important;
+  min-height: 2.5rem;
+  max-width: 100%;
+  text-align: left;
+  line-height: 1.35;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.app-sidebar span {
+  white-space: normal !important;
+}ene kodnd bga ulaan zuraasiin ongiigl tsagaan bolgood backroundtai n adilhan oorchlogddog bolgood og
+
+/* Sidebar-ийн зураас: background-тайгаа адил өнгөтэй */
+.app-sidebar {
+  outline: none !important;
+  border-color: #ffffff !important;
+}
+
+body.dark-mode .app-sidebar {
+  outline: none !important;
+  border-color: #000000 !important;
+}
+
+
+
+
+
+
+/* Sidebar-ийн хүрээ, зураасыг арын дэвсгэртэй ижил болгох */
+:root {
+  --sidebar-border-color: #ffffff;
+  --sidebar-background-color: #ffffff;
+}
+
+body.dark-mode {
+  --sidebar-border-color: #000000;
+  --sidebar-background-color: #000000;
+}
+
+.app-sidebar {
+  background-color: var(--sidebar-background-color) !important;
+  border-color: var(--sidebar-border-color) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.app-sidebar *,
+.app-sidebar .menu,
+.app-sidebar .menu-list a,
+.app-sidebar .menu-list li a {
+  outline-color: var(--sidebar-border-color) !important;
+  box-shadow: none !important;
+}
+
+.app-sidebar .menu-list a,
+.app-sidebar .menu-list li a {
+  border-color: var(--sidebar-border-color) !important;
+}
+
+body.dark-mode .app-sidebar,
+body.dark-mode .app-sidebar .menu,
+body.dark-mode .app-sidebar .menu-list a,
+body.dark-mode .app-sidebar .menu-list li a {
+  background-color: var(--sidebar-background-color) !important;
+  border-color: var(--sidebar-border-color) !important;
+}
+
+
+/* Sidebar-ийн хүрээ арын дэвсгэртэй ижил өнгөтэй байна */
+:root {
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #ffffff;
+}
+
+body.dark-mode {
+  --sidebar-bg: #000000;
+  --sidebar-border: #000000;
+}
+
+.app-sidebar {
+  background-color: var(--sidebar-bg) !important;
+  border: 1px solid var(--sidebar-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.app-sidebar .menu {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.app-sidebar .menu-list a,
+.app-sidebar .menu-list li a {
+  border-color: var(--sidebar-border) !important;
+  box-shadow: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .app-shell {
+    display: block; /* Sidebar + main layout-ийг stack болгоно */
+    height: auto;
+  }
 }
